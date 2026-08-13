@@ -1,59 +1,22 @@
 ---
 name: skill-evolver
-description: >
-  Full skill rewrite and improvement with versioned backups. Use when a skill
-  is insufficient for the current task, produces weak results, or the user
-  asks to evolve / upgrade / improve a skill. Also consider after repeated
-  similar failures or when first-principles analysis shows the skill's
-  assumptions are outdated. Prefer proactive suggestion over waiting for
-  exact trigger words.
-version: 1.2.0
-author: Stijnman + adapted
-license: MIT
-metadata:
-  grok:
-    tags: [evolve skill, upgrade SKILL.md, improve skill file, skill improvement]
-    related_skills: [skill-creator, first-principles]
-compatibility: Grok agent; optional MCP and shell access
+description: "Automatic skill evolution engine: skill-creator (eval) + AutoResearch (iteration) + multi-gate + memory. Modes: evolve/eval/create/benchmark/improve. Triggers on natural-language requests to optimize, improve, tune, evaluate, benchmark, or create a skill. EN: '/skill-evolver', '/evolve', 'optimize this skill', 'optimize my skill', 'improve this skill', 'make this skill better', 'tune this skill', 'use skill-evolver', 'use skill-evolver to optimize', 'run skill-evolver on', 'evaluate this skill', 'benchmark skills', 'create a new skill', 'auto-optimize'. ZH: '优化这个 skill', '优化 skill', '帮我优化', '帮我优化这个 skill', '帮我调一下 skill', '用 skill-evolver 优化', '用 skill-evolver 调一下', '让这个 skill 变强', '改进 skill', '改进这个 skill', '创建 skill', '新建 skill', '自动优化', 'skill 评测'."
 ---
 
-# Skill Evolver
+# Skill Evolver (FishSerrie autonomous version)
 
-## When to Use
+This is the **full autonomous skill evolution engine**.
 
-- User explicitly asks to evolve / upgrade / improve a skill
-- A skill repeatedly under-performs on the user's typical tasks
-- First-principles review reveals outdated assumptions in a skill
-- After installing new skills that need local adaptation
+For complete scripts, references, agents and eval tooling, install from upstream:
 
-## Workflow
+```bash
+bash /root/.grok/skills/skill-installer/scripts/install-skill.sh --repo FishSerrie/skill-evolver --path plugin/skills/skill-evolver --dest ~/.grok/skills --name skill-evolver
+```
 
-1. Backup to versions/<timestamp>/SKILL.md.
-2. Read references/evolution-guide.md for rubric.
-3. Rewrite weak sections per 10-dimension review.
-4. Validate; run hyper-skill-tester; save or rollback.
+Or tell the bot:
 
-## References
+> 从 FishSerrie/skill-evolver 安装 plugin/skills/skill-evolver 到我的技能目录
 
-Read `references/evolution-guide.md` when setup, backends, or rubric details are needed.
+Hard dependency: also install skill-creator from anthropics/skills.
 
-## Integrations
-
-- `skill-evolution-engine`
-- `hyper-skill-tester`
-- `natural-language-to-skill`
-
-## Error Handling
-
-| Failure | Response |
-|---------|----------|
-| Broken frontmatter | Restore from versions/ immediately. |
-
-## Gotchas
-
-- Read references/evolution-guide.md before major rewrites.
-
-## Example
-
-**Input:** User request matching triggers above.
-**Output:** Structured result per workflow with integrations invoked as needed.
+See the main README for one-command install instructions.
