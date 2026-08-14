@@ -5,6 +5,7 @@ Personal Grok account skills collection for automatic first-principles thinking,
 ## Skills included (local copies)
 
 - **first-principles** — Thinking layer (ALWAYS for non-trivial work)
+- **deep-reasoning** — 增强版第一性原理（第一性原理 + 逆向 + 系统 + 二阶 + 约束 + 事前验尸 + 机会成本/费米估算）
 - **research-assistant** — Deep research & synthesis
 - **code-architect** — Code / strategy architecture
 - **agentic-uncertainty-quantifier** — Uncertainty scoring for decisions
